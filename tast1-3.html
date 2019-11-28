@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>下拉列表框</title>
+    <style>
+      .box-main {
+        position: relative;
+        background-color: rgb(246, 80, 64);
+        width: 350px;
+        height: 70px;  
+        border-radius: 5px;
+      }
+
+      .box-main-text {
+        display: inline-block;
+      }
+
+      p {  
+        font-size: 30px;
+        color: rgba(250, 244, 244, 0.973);
+        margin-block-start: 15px;
+        margin-block-end: 15px;
+        margin-inline-start: 10px;
+      }
+      
+      .box-main-tri {
+        display: inline-block; 
+        width: 0px;
+        height: 0px;
+        margin-left: 20px;
+        border: 10px solid;
+        border-left-color:transparent;
+        border-right-color:transparent;
+        border-bottom-color:transparent;
+        border-top-color:rgba(250, 244, 244, 0.973);
+      }
+      .box-triangle {
+        display: block;
+        width: 0px;
+        height: 0px;
+        margin-left: 273px;
+        margin-bottom: -16px;
+        border: 10px solid;
+        border-left-color:transparent;
+        border-right-color:transparent;
+        border-bottom-color:rgb(246, 80, 64);
+        border-top-color:transparent;
+      }
+      .box-list {
+        position: relative;
+        display: block;      
+        width: 350px;
+        height: auto;  
+        border-radius: 5px;
+        background-color: rgb(246, 80, 64);
+      }
+
+      .show-image {
+        background-image: url(./image/icon.png);
+        width: 40px;
+        height: 50px;
+      }
+
+      hr {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        border-width: 0.5px;
+      }
+      ul {
+        list-style-type: none;
+        padding-inline-start: 20px;
+        padding: 5px;
+      }
+
+      ul li {
+        margin: 10px;
+        padding-left: 55px;
+        background-repeat: no-repeat;
+        font-size: 30px;
+        color: rgba(250, 244, 244, 0.973);
+       }
+      
+       #like {
+        background-position: 0 0;
+       }
+
+       #favorite {
+        background-position: -93px 0;
+        border-top-color: rgba(250, 244, 244, 0.973);
+        border-top-width: 4px;
+       }
+
+       #discuss {
+        background-position: 0 -70px;
+       }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="box-main">
+      <div class="box-main-text">
+         <p>Saint Petersburg</p>
+      </div>
+      <div class="box-main-tri">
+      </div>
+    </div>
+    <div class="box-triangle">
+    </div>
+    <div class="box-list">
+      <ul>
+        <li id="like" class="show-image">Like</li>
+        <hr/>
+        <li id="favorite" class="show-image">Favorites</li>
+        <hr/>
+        <li id="discuss" class="show-image">Discuss</li>
+      </ul>
+    </div>
+  </body>
+</html>
