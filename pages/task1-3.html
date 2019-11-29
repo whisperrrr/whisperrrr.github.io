@@ -28,11 +28,8 @@
         display: inline-block; 
         width: 0px;
         height: 0px;
-        margin-left: 20px;
-        border: 10px solid;
-        border-left-color:transparent;
-        border-right-color:transparent;
-        border-bottom-color:transparent;
+        margin-left: 28px;
+        border: 10px solid transparent;
         border-top-color:rgba(250, 244, 244, 0.973);
       }
       .box-triangle {
@@ -41,11 +38,8 @@
         height: 0px;
         margin-left: 273px;
         margin-bottom: -16px;
-        border: 10px solid;
-        border-left-color:transparent;
-        border-right-color:transparent;
+        border: 10px solid transparent;
         border-bottom-color:rgb(246, 80, 64);
-        border-top-color:transparent;
       }
       .box-list {
         position: relative;
@@ -58,10 +52,12 @@
 
       .show-image {
         background-image: url(../image/icon.png);
-        width: 40px;
+        width: 0px;
         height: 50px;
       }
-
+      a {
+        text-decoration: none;
+      }
       hr {
         margin-block-start: 0;
         margin-block-end: 0;
@@ -75,7 +71,7 @@
 
       ul li {
         margin: 10px;
-        padding-left: 55px;
+        padding-left: 60px;
         background-repeat: no-repeat;
         font-size: 30px;
         font-family: "Raleway",sans-serif;
@@ -111,11 +107,11 @@
     </div>
     <div class="box-list">
       <ul>
-        <li id="like" class="show-image">Like</li>
+        <a href="#"><li id="like" class="show-image">Like</li></a>
         <hr/>
-        <li id="favorite" class="show-image">Favorites</li>
+        <a href="#"><li id="favorite" class="show-image">Favorites</li></a>
         <hr/>
-        <li id="discuss" class="show-image">Discuss</li>
+        <a href="#"><li id="discuss" class="show-image">Discuss</li></a>
       </ul>
     </div>
   </body>
