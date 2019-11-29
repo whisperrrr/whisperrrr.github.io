@@ -29,9 +29,9 @@
           <td>得分：&nbsp;100</td>
         </tr>
         <tr>
-          <td>班级：&emsp;&emsp;<input type="text" name="班级" value="1班"></td>
-          <td>学号：<input type="text" name="学号" value="001"></td>
-          <td>姓名：&emsp;&emsp;<input type="text" name="姓名" value="王小明"></td>
+          <td>班级：&emsp;&emsp;<input type="text" name="班级" value="1班"/></td>
+          <td>学号：<input type="text" name="学号" value="001"/></td>
+          <td>姓名：&emsp;&emsp;<input type="text" name="姓名" value="王小明"/></td>
         </tr>
       </table>
     </div>
@@ -40,12 +40,12 @@
       <form name="gap-filling-form" method="post" action="save.php">
         <ol>
           <li>UML的中文全称是：
-            <input type="text" name="uml-fullname" value="统一建模语言">
+            <input type="text" name="uml-fullname" value="统一建模语言"/>
           </li>
           <li>对象最突出的特征是：
-            <input type="text" name="feature" value="封装性">
-            <input type="text" name="feature" value="继承性">
-            <input type="text" name="feature" value="多态性">
+            <input type="text" name="feature" value="封装性"/>
+            <input type="text" name="feature" value="继承性"/>
+            <input type="text" name="feature" value="多态性"/>
           </li>
         </ol>
       </form>
@@ -56,16 +56,16 @@
         <form name="selection-sin" method="post" action="save.php">
           <ol>
             <li>UML与软件工程的关系是：<br/>
-              <input type="radio" name="relation-uml" value="A">（A）UML就是软件工程<br/>
-              <input type="radio" name="relation-uml" value="B" checked="checked">（B）UML参与到软件工程中软件开发过程的几个阶段<br/>
-              <input type="radio" name="relation-uml" value="C">（C）UML与软件工程无关<br/>
-              <input type="radio" name="relation-uml" value="D">（D）UML是软件工程的一部分<br/>
+              <input type="radio" name="relation-uml" value="A"/>（A）UML就是软件工程<br/>
+              <input type="radio" name="relation-uml" value="B" checked="checked"/>（B）UML参与到软件工程中软件开发过程的几个阶段<br/>
+              <input type="radio" name="relation-uml" value="C"/>（C）UML与软件工程无关<br/>
+              <input type="radio" name="relation-uml" value="D"/>（D）UML是软件工程的一部分<br/>
             </li>
             <li>Java语言支持：<br/>
-              <input type="radio" name="java-support" value="A">（A）单继承<br/>
-              <input type="radio" name="java-support" value="B" checked="checked">（B）多继承<br/>
-              <input type="radio" name="java-support" value="C">（C）单继承和多继承都支持<br/>
-              <input type="radio" name="java-support" value="D">（D）单继承和多继承都不支持<br/>
+              <input type="radio" name="java-support" value="A"/>（A）单继承<br/>
+              <input type="radio" name="java-support" value="B" checked="checked"/>（B）多继承<br/>
+              <input type="radio" name="java-support" value="C"/>（C）单继承和多继承都支持<br/>
+              <input type="radio" name="java-support" value="D"/>（D）单继承和多继承都不支持<br/>
             </li>
           </ol>
         </form>
@@ -77,16 +77,16 @@
         <form name="selection-mul" method="post" action="save.php">
           <ol>
             <li>用例的粒度分为以下哪三种：<br/>
-              <input type="checkbox" name="grad" value="a" checked="checked">（A）概述级<br/>
-              <input type="checkbox" name="grad" value="b" checked="checked">（B）需求级<br/>
-              <input type="checkbox" name="grad" value="c">（C）用户目标级<br/>
-              <input type="checkbox" name="grad" value="d" checked="checked">（D）子功能级<br/>
+              <input type="checkbox" name="grad" value="a" checked="checked"/>（A）概述级<br/>
+              <input type="checkbox" name="grad" value="b" checked="checked"/>（B）需求级<br/>
+              <input type="checkbox" name="grad" value="c"/>（C）用户目标级<br/>
+              <input type="checkbox" name="grad" value="d" checked="checked"/>（D）子功能级<br/>
             </li>
             <li>类图由以下哪三部分组成：<br/>
-              <input type="checkbox" name="class-diag" value="a" checked="checked">（A）名称（Name）<br/>
-              <input type="checkbox" name="class-diag" value="b" checked="checked">（B）属性（Attribute）<br/>
-              <input type="checkbox" name="class-diag" value="c" checked="checked">（C）操作（Operation）<br/>
-              <input type="checkbox" name="class-diag" value="d">（D）方法（Function）<br/>
+              <input type="checkbox" name="class-diag" value="a" checked="checked"/>（A）名称（Name）<br/>
+              <input type="checkbox" name="class-diag" value="b" checked="checked"/>（B）属性（Attribute）<br/>
+              <input type="checkbox" name="class-diag" value="c" checked="checked"/>（C）操作（Operation）<br/>
+              <input type="checkbox" name="class-diag" value="d"/>（D）方法（Function）<br/>
             </li>
           </ol>
         </form>
@@ -98,12 +98,12 @@
         <form name="checkform" method="post" action="save.php">
           <ol>
             <li>用例图只是用于和客户交流和沟通的，用于确定需求。
-              <input type="radio" name="usecase-diag" value="right">✔
-              <input type="radio" name="usecase-diag" value="false" checked="checked">×<br/>
+              <input type="radio" name="usecase-diag" value="right"/>✔
+              <input type="radio" name="usecase-diag" value="false" checked="checked"/>×<br/>
             </li>
             <li>在状态图中，终止状态在一个状态图中允许有任意多个。
-              <input type="radio" name="status-diag" value="right" checked="checked">✔
-              <input type="radio" name="status-diag" value="false">×<br/>
+              <input type="radio" name="status-diag" value="right" checked="checked"/>✔
+              <input type="radio" name="status-diag" value="false"/>×<br/>
             </li>
           </ol>
         </form>
@@ -123,7 +123,7 @@
     </div>
     <div class="final-butten">
       <form name="final-butten-form" method="post" action="save.php">
-        <input type="submit" value="计算分数">
+        <input type="submit" value="计算分数"/>
       </form>
     </div>
   </body>
