@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>CSS(2)</title>
+    <link href="https://at.alicdn.com/t/font_1526073_qnokkd6iu2.css" rel="stylesheet">
+    <style>
+      .content {
+        width: 25%;
+        min-width: 330px;
+        position: relative;
+        margin: 0 auto;
+        }
+      .top-bar {
+        width: 100%;
+        height: 35px;
+        background-color: rgb(50, 57 ,74);
+        color: rgb(241, 247, 252);
+        text-align: center;
+      }
+      .topbar-left {
+        padding-block-start: 0.5em;
+        padding-inline-start: 0.5em;
+        float: left;
+      }
+      p {
+        display: inline-block;
+        margin-block-start: 0.3em;
+        margin-block-end: 0.5em;
+      }
+      .topbar-right {
+        padding-block-start: 0.5em;
+        padding-inline-end: 0.5em;
+        float: right;
+      }
+      .home-pic {
+        width: 100%;
+        height: 20%;
+        min-height: 150px;
+        background-image: url(./image/home-pic.png);
+        background-size: 100% 100%;
+      }
+      .homepic-switch {
+        position:relative;
+        width: 30px;
+        height: 20px;
+        left: 90%;
+        top: 85%;
+      }
+      .icon-position {
+        display: inline;
+        margin-inline-start: -10px;
+      }
+      .column {
+        width: 100%;
+        height: auto;
+        background-color: rgb(250, 245, 245);
+      }
+      .first-row {
+        text-align: center;
+      }
+      table {
+        margin: 0 auto;
+        padding: 5px;
+      }
+      td {
+        border:solid 1px rgb(240, 231, 231);
+        border-radius: 20px;
+        text-align: center;
+        padding: 0.5em 1.5em;
+        font-size: 0.8em;
+      }
+      .choose {
+        background-color: rgb(248, 66, 66);
+        color: rgb(240, 231, 231);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="top-bar">
+        <div class="topbar-left">
+          <i class="iconfont icon-fanhui"></i>
+        </div>
+        <p>实战课程</p>
+        <div class="topbar-right">
+          <i class="iconfont icon-shopping"></i>
+        </div>
+      </div>
+      <div class="home-pic">
+        <div class="homepic-switch">
+          <i class="iconfont icon-yuandian icon-position"></i>
+          <i class="iconfont icon-yuandian icon-position"></i>
+          <i class="iconfont icon-yuandian icon-position"></i>
+        </div>
+      </div>
+      <div class="column">
+        <div class="first-row">
+          <table>
+            <tr>
+              <td>全部</td>
+              <td class="choose">前端开发</td>
+              <td>后端开发</td>
+            </tr>
+            <tr>
+              <td>移动开发</td>
+              <td>数据库</td>
+              <td>运维&测试</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
