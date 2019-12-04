@@ -21,7 +21,7 @@
         padding-inline-start: 0.5em;
         float: left;
       }
-      p {
+      .top-bar > p {
         display: inline-block;
         margin-block-start: 0.3em;
         margin-block-end: 0.5em;
@@ -32,6 +32,7 @@
         float: right;
       }
       .home-pic {
+        position: relative;
         width: 100%;
         height: 20%;
         min-height: 150px;
@@ -39,34 +40,49 @@
         background-size: 100% 100%;
       }
       .homepic-switch {
-        position:relative;
+        position: absolute;
         width: 30px;
         height: 20px;
-        left: 90%;
-        top: 85%;
+        right: 0;
+        bottom: 0;
       }
       .icon-position {
         display: inline;
         margin-inline-start: -10px;
       }
+      .icon-position3 {
+        display: inline;
+        margin-inline-start: -10px;
+        color:rgb(194, 205, 202) ;
+      }
       .column {
         width: 100%;
         height: auto;
-        background-color: rgb(250, 245, 245);
+        background-color: rgb(250, 250, 250);
       }
       .first-row {
+        display: flex;
+        flex-direction: row;
         text-align: center;
+        justify-content: space-around;
       }
-      table {
-        margin: 0 auto;
-        padding: 5px;
+      .second-row {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-around;
       }
-      td {
+      .fr-text {
+        display: inline-block;
+        width: 25%;
         border:solid 1px rgb(240, 231, 231);
         border-radius: 20px;
-        text-align: center;
-        padding: 0.5em 1.5em;
-        font-size: 0.8em;
+        padding: 5px;
+        margin: 5px;
+      }
+      .fr-text-special {
+        color: rgb(245, 249, 253);
+        background-color: rgb(255, 50, 50);
       }
       .choose {
         background-color: rgb(248, 66, 66);
@@ -89,23 +105,19 @@
         <div class="homepic-switch">
           <i class="iconfont icon-yuandian icon-position"></i>
           <i class="iconfont icon-yuandian icon-position"></i>
-          <i class="iconfont icon-yuandian icon-position"></i>
+          <i class="iconfont icon-yuandian icon-position3"></i>
         </div>
       </div>
       <div class="column">
         <div class="first-row">
-          <table>
-            <tr>
-              <td>全部</td>
-              <td class="choose">前端开发</td>
-              <td>后端开发</td>
-            </tr>
-            <tr>
-              <td>移动开发</td>
-              <td>数据库</td>
-              <td>运维&测试</td>
-            </tr>
-          </table>
+          <span class="fr-text">全部</span>
+          <span class="fr-text fr-text-special">前端开发</span>
+          <span class="fr-text">后端开发</span>
+        </div>
+        <div class="second-row">
+          <span class="fr-text">移动开发</span>
+          <span class="fr-text">数据库</span>
+          <span class="fr-text">运维&测试</span>
         </div>
       </div>
     </div>
