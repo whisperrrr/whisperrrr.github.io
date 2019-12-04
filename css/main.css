@@ -1,0 +1,337 @@
+﻿body {
+    background-color: black;
+    width: 95%;
+    margin: auto;
+}
+a {
+  text-decoration: none;
+}
+.content {
+  width: 100%;
+  min-width: 1140px;
+  max-width: 1300px;
+  margin: 0 auto;
+  background-color: rgb(0, 0, 0);
+}
+#top-bar {
+  width: 1300px;
+  height: 124px;
+  position: fixed;
+  z-index: 20;
+  background-image: url(../image/starfield-banner.jpg);
+} 
+.tb-logo img{
+  float: left;
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  z-index: 1;
+}
+.tb-logo-link {
+  text-decoration: none;
+}
+.tb-menu {
+  height: 124px;
+  position: absolute;
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.tb-menu-top {
+  height: 60%;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+}
+.tmt-ulist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 0 13%;
+  padding: 10px 20px;
+}
+.tmt-list {
+  display: block;
+  height: 100%;
+  width: fit-content;
+  color: rgb(255, 255, 255);
+}
+.tmt {
+  display: block;
+  margin: 1em 0;
+}
+.tmt::before {
+  content: "";
+  display: block;
+  float: left;
+  margin: 0 4px;
+  background: rgb(129, 129, 129);
+  width: 1px;
+  height: 40px; 
+  margin-top: -8px;
+}
+.tb-menu-bottom {
+  height: 30%;
+  font-size: 0.5em;
+  color: rgb(255, 255, 255);
+  margin-top: 1%;
+  background-color: rgb(88, 88, 88);
+}
+.tmb-ulist {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  margin: 0px;
+  padding: 0 20px;
+  height: 100%;
+}
+.tmb-list {
+  display: block;
+  height: 100%;
+  width: fit-content;
+  color: rgb(255, 255, 255);
+}
+.tmb-first {
+  display: block;
+  margin: 1em 0;
+}
+.tmb {
+  display: block;
+  margin: 3px 0; 
+}
+.tmb::before {
+  content: "";
+  display: block;
+  float: left;
+  margin: 0 4px;
+  background: rgb(128, 128, 128);
+  width: 1px;
+  height: 20px; 
+}
+.tb-search {
+  float: right;
+  width: 180px;
+  height: 30px;
+  margin: 1.5em 0;
+  background-color: rgb(104, 103, 103);
+}
+#search {
+  display: inline-block;
+  position: relative;
+  width: 70%;
+  height: 100%;
+  padding-left: 10%;
+}
+.search-box {  
+  display: inline-block;
+  position: relative;
+  width: 70%;
+  height: 30px;
+  cursor: text;
+  border: 0px;
+  background-color: inherit;
+  outline: none;
+}
+.search-sub {
+  display: inline-block;
+  height: 30px;
+  width: 25%;
+  padding: 0;
+  position: relative;
+  border: 0;
+  top: 0;
+  right: 0;
+  text-indent: 40px;
+  background: url(../image/search.svg);
+  outline: none;
+}
+.search-social {
+  float: right;
+  right: 0;
+  color: rgb(255, 255, 255);
+  width: 20%;
+  height: 30px;
+  background-color: rgb(0, 0, 0); 
+}
+#main-content {
+  padding-top: 124px;
+  width: 100%;
+}
+.ma-top {
+  display: grid;
+  width: 100%;
+  height: 600px;
+  grid-template-areas: "a a b c"
+                       "a a d d";
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.mat-left {
+  position: relative;
+  grid-area: a;
+  background: url(../image/pia21924-16.jpg);
+  margin: 8px;
+}
+.mat-right-top1 {
+  position: relative;
+  grid-area: b;
+  background: url(../image/mollweide_cycle.jpg);
+  margin: 8px;
+}
+.mat-right-top2 {
+  position: relative;
+  grid-area: c;
+  background-color: rgb(57, 113, 158);
+  margin: 8px;
+  padding: 5px;
+  color: rgb(238, 246, 253);
+}
+.mat-right-top2 > h5 {
+  margin: 1em 0;
+}
+.matrt2-bottom {
+  position: absolute;
+  bottom: 5px;
+}
+.matrt2-bottom > hr {
+  margin: 0;
+}
+.matrt2 {
+  font-size: 0.8em;
+  margin: 6px;
+  color: rgb(240, 248, 255);
+}
+.mat-right-bottom {
+  position: relative;
+  grid-area: d;
+  background: url(../image/s69-39961.jpg);
+  margin: 8px;
+}
+.ma-bottom {
+  display: grid;
+  width: 100%;
+  height: 600px;
+  grid-template-areas: "e f f g"
+                       "h i j k";
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.mab-top1 {
+  position: relative;
+  grid-area: e;
+  background: url(../image/ssc2017-14a1.jpg);
+  background-size: 100% 100%;
+  margin: 8px;
+}
+.mab-top2 {
+  position: relative;
+  grid-area: f;
+  background: url(../image/pia22556-16.gif);
+  margin: 8px;
+}
+.mab-top3 {
+  grid-area: g;
+  background-color: rgb(0, 0, 0);
+  margin: 8px;
+}
+.mabt3-video {
+  height: 90%;
+  width: 100%;
+}
+.mab-bottom1 {
+  position: relative;
+  grid-area: h;
+  background: url(../image/nasa_logo.png);
+  background-size: 100% 100%;
+  margin: 8px;
+}
+.mab-bottom2 {
+  position: relative;
+  grid-area: i;
+  background: url(../image/io-home.gif);
+  margin: 8px;
+}
+.mab-bottom3 {
+  position: relative;
+  grid-area: j;
+  background: url(../image/cassini20170809.jpg);
+  margin: 8px;
+}
+.mab-bottom4 {
+  position: relative;
+  grid-area: k;
+  background: url(../image/fermiicecube_as.jpg);
+  margin: 8px;
+}
+.ma-content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.blue-back {
+  margin: 0;
+  padding: 2px;
+  font-size: 0.9em;
+  color: rgb(238, 253, 238);
+  width: fit-content;
+  background-color: rgba(100, 133, 181, 0.89);
+}
+.grey-back {
+  margin: 0;
+  padding: 2px;
+  background-color: rgba(218, 218, 218, 0.781);
+}
+.more-story {
+  width: 100%;
+  background-color: rgb(21, 65, 140);
+  text-align: center;
+  color: rgb(253, 253, 239);
+}
+.ms-p {
+  padding: 0.5em 0;
+  color: rgb(253, 253, 239);
+}
+#bottom-info {
+  position: relative;
+  width: 100%;
+  height: 120px;
+}
+.bi-left {
+  display: inline-block;
+}
+.bi-center {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  height: 100%;
+  color: rgb(253, 253, 239);
+  font-size: 0.7em;
+}
+.bi-center > p {
+  margin: 0;
+}
+.bi-right {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 800px;
+}
+.bir-ul {
+  display: flex;
+  flex-direction: row;
+}
+.bir-li {
+  display: inline-block;
+  margin: 7px;
+  color: rgb(93, 127, 185);
+  font-size: 0.5em;
+}
+.link-div {
+  text-decoration: none;
+  color: initial;
+}
+.more-story:hover {
+  background: rgb(129, 150, 187);
+  transition: all 1s;
+  z-index: 30;
+}
