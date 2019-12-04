@@ -5,169 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+    <link rel="stylesheet" href="../css/task1-5.css" type="text/css">
     <title>CSS(3)</title>
-    <style>
-      hr,h3 {
-        margin: 0;
-      }
-      .content {
-        position: relative;
-        display: block;
-        margin: 0 auto;
-        padding: .6rem 0;
-        width: 100%;
-        text-align: center;
-        background-image: linear-gradient(-45deg, #ee7752, #c73c7c,#23a6d5,#23d5ab);
-      }
-      .shadow-text {
-        font-size: 92px;
-        color:white;
-        letter-spacing: 2.4px;
-        margin: 0 auto;
-        text-shadow: 0 8px black;
-      }
-      @font-face {
-        font-family: "iconfont";
-        src: url('../iconfont/iconfont.eot?t=1574909918777'); /* IE9 */
-        src: url('../iconfont/iconfont.eot?t=1574909918777#iefix') format('embedded-opentype'), /* IE6-IE8 */
-        url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAM0AAsAAAAABxQAAALnAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBeIF6ATYCJAMMCwgABCAFhG0HPBtGBsi+YjDGUM3rnshCKZ25cqafXqLarkN4h7w3vh+sE7bBXzIC+v1Y+wTVBkk0ahOPookhkbSaJBIhM52QoTTRJncXb/ofOOc6RKOOGYJbW9Oj/eJJ8gN+YC/91lo+o6LGlZ/kqxKpsmpnZy+7x/nJp6RclePxlaaIgxsUSsYZpJLzOwwwlJlTTgOKLW5Z7Dl+/i46bK3XT1BXx/oBdJZYYnxwdwwQ9bUuqKCC1BUhJdQ8xtZiXZ5rKEYcTpvngc2/y3Obe1CACQa6l0URDbEuMetDHPbKvE5ApXYKcHp4cZ0oyKx5AWEntipRyPllWUiVC0prtuZT8KiVx5s4bsPPh38mEEQlibV0YfvQSex8811aF1qfQDCfFcIuEgYAMmGz1r4hHccHwCo1aUavBZTKgjhXqAghX5eW2n94RIFQyiquBj2UiHzr8lNFKLzrqxIoRca8hAOWunmsNjYi51sFvlzvF776tx9HTVEiNXPGQhcrhm/e2sd6eGJ1jl8+Fdb/eyf92qNWD9uT5vAdV38nZb3Rahqr4O/raQmkiV93/3+k+5vr9U696Vc6Tvesyzp/yAC2JBQ0+3JJis/Aw79+n+ve1AedwSsbVdjRv0C5iCD4x235niffiSIrljJajLXbdSYdI6MRlXaIguVuVI1Xt7xHMijXkiIq04akXAcxUwdQosogSpUbQ6V+o91VmmTSQq5AnwMgqHdDVOsBSb0HMVOfKNHqhVL1AUaltSAfWaUrxFQvQyXogPMGsabYOCYpRaWXaJ9CxVlRSL9FXnohMEeTYuoYY+Q5VuTPdlaIgYApgiHchmFIkDD5qGUUiSzm+tjUPWnkUpQomcKQIpADON6AmEZixh8tSqX3X0LWk5DCLT017luILXnjA5PG6EE8lse9eu7lkdwza6YgDBBgJAKGYEWhHScgqZ/kQ5oYiUZEF+Z0Ghb0lY/WV0YfkCcMYJ2YQgwpZKWHcewqKqYliZKX0CUSAA==') format('woff2'),
-        url('../iconfont/iconfont.woff?t=1574909918777') format('woff'),
-        url('../iconfont/iconfont.ttf?t=1574909918777') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-        url('../iconfont/iconfont.svg?t=1574909918777#iconfont') format('svg'); /* iOS 4.1- */
-      }
-      .iconfont {
-        font-family: "iconfont" !important;
-        font-size: 16px;
-        font-style: normal;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      .icon-yinhao:before {
-        content: "\e654";
-      }
-
-      .icon-quotation:before {
-        content: "\e615";
-      }
-      .second-part {
-        width: 400px;
-        margin: 0 auto;
-        padding: 5px;
-        background-color: white;
-        color: yellowgreen;
-        border-radius: 5px;
-      }
-      .third-part {
-        display: flex;
-        margin: 0 auto;
-        width: 90%;
-        height: 180px;
-        justify-content: space-around;
-      }
-      a {
-        text-decoration: none;
-      }
-      .third-part-left {
-        width: 30%;
-        height: 90%;
-        border:8px solid white;
-        background-size: 100% 100%;
-        background-image: url(../image/empire-state.png);
-      }
-      .left-mask {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(58, 1, 132, 0.44);
-        color: #ffffff;
-        opacity: 0;
-        text-align: center;
-        font-family: "Merriweather";
-      }
-      a:hover .left-mask {
-        opacity: 1;           
-      }
-      .left-mask-butten {
-        margin: 0 auto;
-        width: fit-content;
-        background-color: black;
-        color: white;
-      }
-      .third-part-center {
-        width: 30%;
-        height: 90%;
-        border:8px solid white;
-        background-size: 100% 100%;
-        background-image: url(../image/midtown.png);
-        
-      }
-      .center-mask {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 231, 179, 0.3);
-        color: #ffffff;
-        opacity: 0;
-        text-align: center;
-        font-family: "Merriweather";
-        transition: all 2s;
-      }
-      a:hover .center-mask {
-        opacity: 1;        
-      } 
-      .third-part-right {
-        width: 30%;
-        height: 90%;
-        border:8px solid white;
-        background-size: 100% 100%;
-        background-image: url(../image/liberty.png);
-      }
-      .right-mask {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 231, 179, 1);
-        color: black;
-        opacity: 0;
-        text-align: center;
-        font-family: "Merriweather";
-      }
-      a:hover .right-mask {
-        opacity: 1;           
-      } 
-      .multi-column {
-        margin: 0 auto;
-        padding: 1em;
-        width: 50%;
-        background-color: white;
-        font-family: serif;
-        font-size: 16px;
-        column-count: 3;
-        text-align: initial;
-        border-radius: 5px;
-      }
-      .forth-part-tri {
-        position: relative;
-        width: 0px;
-        height: 0px;
-        margin: 0 auto;
-        border: 20px solid transparent;
-        border-bottom-color:white;
-      }
-    </style>
   </head>
   <body>
     <div class="content">
       <h4>第一部分：text-shadow的使用</h4>
       <div class="first-part">
-      <p class="shadow-text">CSS3&nbsp;实战练习</p>
+        <p class="shadow-text">CSS3&nbsp;实战练习</p>
       </div>
       <h4>第二部分：@font-face 和 渐变的使用</h4>
       <div class="second-part">
@@ -184,13 +29,15 @@
         <div class="third-part-left">
           <a href="#">
             <div class="left-mask">
-              <h3>EMPIRE STATE</h3>
-              <p>
-                <em>A cool desciption of some sort between these tags.
-                I am so cool and awesomely awesome.</em>
-              </p>
-              <div class="left-mask-butten">
-                 <p>READ MORE</p>
+              <div class="left-mask-content">
+                <h4>EMPIRE STATE</h4>
+                <p class="tp-text">
+                  <em>A cool desciption of some sort between these tags.
+                  I am so cool and awesomely awesome.</em>
+                </p>
+                <div class="left-mask-butten">
+                  <p class="read-more">READ MORE</p>
+                </div>
               </div>
             </div>
           </a>
@@ -198,13 +45,17 @@
         <div class="third-part-center">
             <a href="#">
                 <div class="center-mask">
-                  <h3>MIDTOWN</h3>
-                  <p>
-                    <em>A desciption of some sort between these tags.
-                    I am so cool and awesomely awesome.</em>
-                  </p>
-                  <div class="left-mask-butten">
-                     <p>READ MORE</p>
+                  <div class="center-mask-back">
+                  </div>
+                  <div class="center-mask-content">
+                    <h4>MIDTOWN</h4>
+                    <p class="tp-text">
+                      <em>A desciption of some sort between these tags.
+                      I am so cool and awesomely awesome.</em>
+                    </p>
+                    <div class="left-mask-butten">
+                      <p class="read-more">READ MORE</p>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -212,13 +63,15 @@
         <div class="third-part-right">
             <a href="#">
                 <div class="right-mask">
-                  <h3>THE ONLY LIVING BOY IN NEW YORK</h3>
-                  <hr/>
-                  <p>
-                    <em>Words and such,a whole lot more of much flippin' words.</em>
-                  </p>
-                  <div class="left-mask-butten">
-                     <p>READ MORE</p>
+                  <div class="right-mask-content">
+                    <h4>THE ONLY LIVING BOY IN NEW YORK</h4>
+                    <hr/>
+                    <p class="tp-text">
+                      <em>Words and such,a whole lot more of much flippin' words.</em>
+                    </p>
+                    <div class="left-mask-butten">
+                      <p class="read-more">READ MORE</p>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -226,14 +79,12 @@
       </div>
       <h4>第四部分：Multi-column Layout Module的应用</h4>
       <div class="forth-part">
-        <div class="forth-part-tri">
+        <div class="multi-column">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-        <p class="multi-column">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br/>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br/>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
       </div>
     </div>
   </body>
