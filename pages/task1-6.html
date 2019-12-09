@@ -5,57 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>NASA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1526073_a7p6jbrirul.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
   </head>
   <body>
     <audio src="../music/StarryStarryNight.mp3" autoplay>您的浏览器可能不支持哦</audio>
     <div class="content">
-      <div id="top-bar">
+      <section class="header">
         <div class="tb-logo">
-          <a class="tb-logo-link" href="#"> 
+          <a href="#"> 
             <img src="../image/nasa_logo.png" alt="logo">
           </a>
         </div>
-        <div class="tb-menu">
-          <div class="tb-menu-top">
-            <ul class="tmt-ulist">
-              <a class="link-div" href="#"><li class="tmt-list">Missions</li></a>
-              <a class="link-div" href="#"><li class="tmt-list"><span class="tmt">Galleries</span></li></a>
-              <a class="link-div" href="#"><li class="tmt-list"><span class="tmt">NASA TV</span></li></a>
-              <a class="link-div" href="#"><li class="tmt-list"><span class="tmt">Follow NASA</span></li></a>
-              <a class="link-div" href="#"><li class="tmt-list"><span class="tmt">Download</span></li></a>
-              <a class="link-div" href="#"><li class="tmt-list"><span class="tmt">About</span></li></a>
-              <a class="link-div" href="#"><li class="tmt-list"><span class="tmt">NASA Audiences</span></li></a>
-            </ul>
-          </div>
-          <div class="tb-menu-bottom">
-            <ul class="tmb-ulist">
-              <a class="link-div" href="#"><li class="tmb-list">Humans in space</span></li></a>
-              <a class="link-div" href="#"><li class="tmb-list"><span class="tmb">Moon to Mars</span></li></a>
-              <a class="link-div" href="#"><li class="tmb-list"><span class="tmb">Earth</span></li></a>
-              <a class="link-div" href="#"><li class="tmb-list"><span class="tmb">Space Tech</span></li></a>
-              <a class="link-div" href="#"><li class="tmb-list"><span class="tmb">Flight</span></li></a>
-              <a class="link-div" href="#"><li class="tmb-list"><span class="tmb">Solor System and Beyond</span></li></a>
-              <a class="link-div" href="#"><li class="tmb-list"><span class="tmb">Education</span></li></a>
-              <a class="link-div" href="#"><li class="tmb-list"><span class="tmb">History</span></li></a>
-              <a class="link-div" href="#"><li class="tmb-list"><span class="tmb">Benefits to you</span></li></a>
-            </ul>
-      
-           </div>
+        <div class="tb-menu-top">
+          <ul class="tmt-ulist">
+            <li class="tmt-list"><a class="link-div" href="#"><span class="tmt-s">Missions</span></a></li>
+            <li class="tmt-list"><a class="link-div" href="#"><span class="tmt">Galleries</span></a></li>
+            <li class="tmt-list"><a class="link-div" href="#"><span class="tmt">NASA TV</span></a></li>
+            <li class="tmt-list"><a class="link-div" href="#"><span class="tmt">Follow NASA</span></a></li>
+            <li class="tmt-list"><a class="link-div" href="#"><span class="tmt">Download</span></a></li>
+            <li class="tmt-list"><a class="link-div" href="#"><span class="tmt">About</span></a></li>
+            <li class="tmt-list"><a class="link-div" href="#"><span class="tmt">NASA Audiences</span></a></li>
+          </ul>
+          <div class="tb-search">
+            <form class="search" action="#">
+              <input class="search-box" type="text" placeholder="search" />
+              <input class="search-sub" type="submit" value="search" />
+            </form>
+            <div class="search-social">
+              <a href="#">
+                <img src="../image/share.svg" alt="share">
+              </a>
+            </div>
+          </div>  
         </div>
-        <div class="tb-search">
-          <form id="search" action="#">
-            <input class="search-box" type="text" placeholder="search" />
-            <input class="search-sub" type="submit" value="search" />
-          </form>
-          <div class="search-social">
-            <a href="#">
-              <img src="../image/share.svg" alt="share">
-            </a>
-          </div>
+        <div class="tb-menu-bottom">
+          <ul class="tmb-ulist">
+            <li class="tmb-list"><a class="link-div" href="#"><span class="tmb-s">Humans in space</a></a></li>
+            <li class="tmb-list"><a class="link-div" href="#"><span class="tmb">Moon to Mars</span></a></li>
+            <li class="tmb-list"><a class="link-div" href="#"><span class="tmb">Earth</span></a></li>
+            <li class="tmb-list"><a class="link-div" href="#"><span class="tmb">Space Tech</span></a></li>
+            <li class="tmb-list"><a class="link-div" href="#"><span class="tmb">Flight</span></a></li>
+            <li class="tmb-list"><a class="link-div" href="#"><span class="tmb">Solor System and Beyond</span></a></li>
+            <li class="tmb-list"><a class="link-div" href="#"><span class="tmb">Education</span></a></li>
+            <li class="tmb-list"><a class="link-div" href="#"><span class="tmb">History</span></a></li>
+            <li class="tmb-list"><a class="link-div" href="#"><span class="tmb">Benefits to you</span></a></li>
+          </ul>
         </div>
-      </div>
-      <div id="main-content">
+      </section>
+      <section class="main-content">
         <div class="ma-top">
           <div class="mat-left">
             <a class="link-div" href="#">
@@ -99,6 +97,7 @@
         <div class="ma-bottom">
           <div class="mab-top1">
             <a class="link-div" href="#">
+              <i class="iconfont icon-icon_Camera mab-top1-icon"></i>
               <div class="ma-content">
                 <p class="blue-back">Image of the Day</p>
                 <p class="grey-back">A Merger of Stars</p>
@@ -131,6 +130,7 @@
           </div>
           <div class="mab-bottom2">
             <a class="link-div" href="#">
+              <i class="iconfont icon-icon_Camera mab-top1-icon"></i>
               <div class="ma-content">
                 <p class="blue-back">Juno</p>
                 <p class="grey-back">NASA Juno Data Indicate Another Possible Volcano on Jupiter Moon lo</p>
@@ -154,13 +154,13 @@
             </a>
           </div>
         </div>
-      </div>
-      <div class="more-story">
+      </section>
+      <section class="more-story">
         <a class="link-div" href="#">
           <p class="ms-p">MORE STORY</p>
         </a>
-      </div>
-      <div id="bottom-info">
+      </section>
+      <section class="bottom-info">
         <div class="bi-left">
             <a class="link-div" href="#">
               <img src="../image/nasa-logo.svg" alt="logo">
@@ -172,16 +172,16 @@
         </div>
         <div class="bi-right">
           <ul class="bir-ul">
-            <a class="link-div" href="#"><li class="bir-li">No Fear Act</li></a>
-            <a class="link-div" href="#"><li class="bir-li">FOIA</li></a>
-            <a class="link-div" href="#"><li class="bir-li">Privacy</li></a>
-            <a class="link-div" href="#"><li class="bir-li">Office of Inspector General</li></a>
-            <a class="link-div" href="#"><li class="bir-li">Office of Special General</li></a>
-            <a class="link-div" href="#"><li class="bir-li">Agency Financial Reports</li></a>
-            <a class="link-div" href="#"><li class="bir-li">Contact NASA</li></a>
+            <li class="bir-li"><a class="link-div" href="#">No Fear Act</a></li>
+            <li class="bir-li"><a class="link-div" href="#">FOIA</a></li>
+            <li class="bir-li"><a class="link-div" href="#">Privacy</a></li>
+            <li class="bir-li"><a class="link-div" href="#">Office of Inspector General</a></li>
+            <li class="bir-li"><a class="link-div" href="#">Office of Special General</a></li>
+            <li class="bir-li"><a class="link-div" href="#">Agency Financial Reports</a></li>
+            <li class="bir-li"><a class="link-div" href="#">Contact NASA</a></li>
           </ul>
         </div>
-      </div>
+      </section>
   </div>
   </body>
 </html>

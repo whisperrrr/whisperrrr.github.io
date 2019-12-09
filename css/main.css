@@ -1,102 +1,142 @@
 ﻿body {
     background-color: black;
-    width: 95%;
-    margin: auto;
+    margin: 0px;
 }
 a {
   text-decoration: none;
 }
-.content {
-  width: 100%;
-  min-width: 1140px;
-  max-width: 1300px;
-  margin: 0 auto;
-  background-color: rgb(0, 0, 0);
+ul li {
+  list-style: none;
 }
-#top-bar {
-  width: 1300px;
+.link-div {
+  text-decoration: none;
+}
+.content {
+  width: 95%;
+  min-width: 1085px;
+  margin: 0 auto;
+}
+.header {
+  width: 95%;
+  min-width: 1085px;
   height: 124px;
   position: fixed;
   z-index: 20;
   background-image: url(../image/starfield-banner.jpg);
 } 
-.tb-logo img{
+.tb-logo {
   float: left;
-  height: 100px;
-  width: 100px;
-  padding: 10px;
-  z-index: 1;
 }
-.tb-logo-link {
-  text-decoration: none;
-}
-.tb-menu {
-  height: 124px;
-  position: absolute;
-  left: 20%;
-  display: flex;
-  flex-direction: column;
+.tb-logo img {
+  width:110px;
+  margin:11px;
 }
 .tb-menu-top {
-  height: 60%;
+  float: right;
   font-size: 1em;
-  color: rgb(255, 255, 255);
+  min-width: 951px;
 }
 .tmt-ulist {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 0 0 13%;
-  padding: 10px 20px;
+  font-size: 1em;
+
+}
+.tmt-ulist a {
+  color: rgb(255, 255, 255); 
 }
 .tmt-list {
-  display: block;
-  height: 100%;
-  width: fit-content;
-  color: rgb(255, 255, 255);
+  margin: 0 5px;
 }
 .tmt {
-  display: block;
   margin: 1em 0;
+}
+.tmt-s::before {
+  content: "";
+  display: block;
+  float: left;
+  margin: -8px 6px 0 0;
+  background: transparent;
+  width: 1px;
+  height: 40px; 
 }
 .tmt::before {
   content: "";
   display: block;
   float: left;
-  margin: 0 4px;
+  margin: -8px 6px 0 0;
   background: rgb(129, 129, 129);
   width: 1px;
   height: 40px; 
-  margin-top: -8px;
+}
+.tb-search {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  margin: 1.5em 1em;
+}
+.search {
+  width: 80%;
+  background-color: rgb(104, 103, 103);
+}
+.search-box {  
+  width: 70%;
+  height: 35px;
+  cursor: text;
+  border: 0px;
+  padding: 0px;
+  background-color: inherit;
+  outline: none;
+}
+.search-sub {
+  float: right;
+  height: 35px;
+  width: 25%;
+  padding: 0;
+  border: 0;
+  text-indent: 40px;
+  background: url(../image/search.svg);
+  outline: none;
+}
+.search-social {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: rgb(255, 255, 255);
+  width: 20%;
+  height: 35px;
+  background-color: transparent; 
+}
+.search-social img {
+  height: 100%;
 }
 .tb-menu-bottom {
-  height: 30%;
+  position: absolute;
+  bottom: 5px;
+  left: 25%;
   font-size: 0.5em;
   color: rgb(255, 255, 255);
-  margin-top: 1%;
-  background-color: rgb(88, 88, 88);
 }
 .tmb-ulist {
   display: flex;
   flex-direction: row;
   align-items: center; 
   margin: 0px;
-  padding: 0 20px;
-  height: 100%;
+  padding: 10px 20px;
+  background-color: rgb(88, 88, 88);
 }
-.tmb-list {
-  display: block;
-  height: 100%;
-  width: fit-content;
-  color: rgb(255, 255, 255);
+.tmb-ulist a {
+  color: rgb(255, 255, 255); 
 }
-.tmb-first {
+.tmb-s::before {
+  content: "";
   display: block;
-  margin: 1em 0;
-}
-.tmb {
-  display: block;
-  margin: 3px 0; 
+  float: left;
+  margin: 0 4px;
+  background: rgb(88, 88, 88);
+  width: 1px;
+  height: 20px; 
 }
 .tmb::before {
   content: "";
@@ -107,54 +147,12 @@ a {
   width: 1px;
   height: 20px; 
 }
-.tb-search {
-  float: right;
-  width: 180px;
-  height: 30px;
-  margin: 1.5em 0;
-  background-color: rgb(104, 103, 103);
-}
-#search {
-  display: inline-block;
-  position: relative;
-  width: 70%;
-  height: 100%;
-  padding-left: 10%;
-}
-.search-box {  
-  display: inline-block;
-  position: relative;
-  width: 70%;
-  height: 30px;
-  cursor: text;
-  border: 0px;
-  background-color: inherit;
-  outline: none;
-}
-.search-sub {
-  display: inline-block;
-  height: 30px;
-  width: 25%;
-  padding: 0;
-  position: relative;
-  border: 0;
-  top: 0;
-  right: 0;
-  text-indent: 40px;
-  background: url(../image/search.svg);
-  outline: none;
-}
-.search-social {
-  float: right;
-  right: 0;
-  color: rgb(255, 255, 255);
-  width: 20%;
-  height: 30px;
-  background-color: rgb(0, 0, 0); 
-}
-#main-content {
+.main-content {
   padding-top: 124px;
   width: 100%;
+}
+.main-content a {
+  color: black;
 }
 .ma-top {
   display: grid;
@@ -190,6 +188,7 @@ a {
 }
 .matrt2-bottom {
   position: absolute;
+  width: 97%;
   bottom: 5px;
 }
 .matrt2-bottom > hr {
@@ -221,6 +220,12 @@ a {
   background: url(../image/ssc2017-14a1.jpg);
   background-size: 100% 100%;
   margin: 8px;
+}
+.mab-top1-icon {
+  color: rgb(238, 246, 253);
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 .mab-top2 {
   position: relative;
@@ -290,19 +295,18 @@ a {
   padding: 0.5em 0;
   color: rgb(253, 253, 239);
 }
-#bottom-info {
+.bottom-info {
   position: relative;
   width: 100%;
   height: 120px;
 }
+.bottom-info a {
+  color: rgb(93, 127, 185)
+}
 .bi-left {
-  display: inline-block;
+  float: left;
 }
 .bi-center {
-  position: absolute;
-  top: 0;
-  display: inline-block;
-  height: 100%;
   color: rgb(253, 253, 239);
   font-size: 0.7em;
 }
@@ -310,25 +314,18 @@ a {
   margin: 0;
 }
 .bi-right {
-  display: inline-block;
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 800px;
+  width: fit-content;
 }
 .bir-ul {
   display: flex;
   flex-direction: row;
 }
 .bir-li {
-  display: inline-block;
   margin: 7px;
-  color: rgb(93, 127, 185);
   font-size: 0.5em;
-}
-.link-div {
-  text-decoration: none;
-  color: initial;
 }
 .more-story:hover {
   background: rgb(129, 150, 187);
