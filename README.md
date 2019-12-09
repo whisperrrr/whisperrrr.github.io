@@ -1,7 +1,13 @@
-https://whisperrrr.github.io/
+第一章 HTML&CSS
 
-如果要查看CSS(一)等其他章节的作业效果，
+1.HTML https://whisperrrr.github.io/
 
-请直接点击上面的主页链接，
+2.HTML5 https://whisperrrr.github.io/
 
-进入界面以后点击页面顶部的相应按钮即可（我已设置链接）。
+3.CSS(一) https://whisperrrr.github.io/pages/task1-3.html
+
+4.CSS(二) https://whisperrrr.github.io/pages/task1-4.html
+
+5.CSS(二) https://whisperrrr.github.io/pages/task1-5.html
+
+6.项目实战 https://whisperrrr.github.io/pages/task1-6.html
