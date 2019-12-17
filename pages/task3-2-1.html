@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM1-1</title>
+  <style>
+    .login-card {
+      width: 400px;
+      height: 200px;
+      margin: 0 auto;
+      padding: 10px;
+      box-sizing: border-box;
+      border: solid 1px gray;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px gray;
+      text-align: center;
+    }
+    .login-card a {
+      font-size: 0.7em;
+    }
+    .account-card {
+      margin: 20px;
+    }
+    .password-card {
+      margin: 20px;
+    }
+    .login-button {
+      margin: 20px;
+    }
+    .login-button button {
+      width: 63%;
+      padding: 5px;
+      background-color: green;
+      border: 0px;
+      color: honeydew;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <form action="#" method="POST">
+      <div class="account-card">
+        <label class="" for="account">账号</label>
+        <input class="" id="account" type="text" name="user-account">
+      </div>
+      <div class="password-card">
+        <label class="#" for="passwd">密码</label>
+        <input class="#" id="passwd" type="password" name="user-password">
+      </div>   
+      <a href="#">忘记密码？点击这里</a>    
+      <div class="login-button">
+        <button id="login" type="submit" class="#" onclick="check()">登录</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    function check() {
+      if (document.getElementById("account").value === "123"
+         && document.getElementById("passwd").value === "123") {
+        alert("login success");
+      }
+      else {
+        document.getElementById("passwd").value = "";
+        alert("your password is not matched to account");
+      }
+    }
+    
+  </script>
+</body>
+</html>

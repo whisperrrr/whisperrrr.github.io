@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM1-2</title>
+  <style>
+    #container {
+      width: 1000px;
+      height: 800px;
+      background: rgb(240,240,240);
+      position: relative;
+    }
+    #box-fix {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      left: 600px;
+      top: 480px;
+    }
+    #box-unfix {
+      width: 80px;
+      height: 80px;
+      background:green;
+      position: absolute;
+      z-index: 90;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="container">
+    <div id="box-unfix">
+    </div>
+    <div id="box-fix"> 
+    </div>
+    <script>
+      var moveDiv = document.querySelector("#box-unfix");
+      moveDiv.addEventListener("mousedown",mouseMoveHandler);
+      var container = document.getElementById("container");
+      var maxWidth = container.clientWidth;
+      var maxHeight = container.clientHeight;
+      document.getElementById("box-fix").style.background = "yellow";
+      //给他设定onmousedown事件
+      function mouseMoveHandler(event) {
+        if (event.type === "mousedown") {
+          event.preventDefault();
+          document.point={
+                    x:event.offsetX,
+                    y:event.offsetY
+                };
+          document.moveDiv=this;
+          document.addEventListener("mousemove",mouseMoveHandler);
+          document.addEventListener("mouseup",mouseMoveHandler);
+        }
+        else if (event.type === "mousemove") {
+          this.moveDiv.style.top = event.clientY - this.point.y + "px";
+          this.moveDiv.style.left = event.clientX - this.point.x + "px";
+          var boxUnfixTop = event.clientY - this.point.y;
+          var boxUnfixLeft = event.clientX - this.point.x;
+          if (this.moveDiv.offsetLeft < 0) {
+            this.moveDiv.style.left = 0 + "px";
+          } 
+          if (this.moveDiv.offsetTop < 0) {
+            this.moveDiv.style.top = 0 + "px";
+          } 
+          if (this.moveDiv.offsetLeft + this.moveDiv.clientWidth > maxWidth) {
+            var moveDivLeft = maxWidth - this.moveDiv.clientWidth;
+            this.moveDiv.style.left = maxWidth - this.moveDiv.clientWidth + "px";
+          }
+          if (this.moveDiv.offsetTop + this.moveDiv.clientHeight> maxHeight) {
+            var moveDivTop = maxHeight - this.moveDiv.clientHeight;
+            this.moveDiv.style.top = maxHeight - this.moveDiv.clientHeight+ "px";
+          }
+          if (boxUnfixTop > 400
+             &&boxUnfixLeft > 520
+             &&boxUnfixTop < 560
+             &&boxUnfixLeft < 680) {
+              document.getElementById("box-fix").style.background = "blue";
+             }
+        }
+         else if(event.type === "mouseup") {
+          this.removeEventListener("mousemove",mouseMoveHandler);
+          this.removeEventListener("mouseup",mouseMoveHandler); 
+         }
+      }
+    </script>
+
+</body>
+</html>
