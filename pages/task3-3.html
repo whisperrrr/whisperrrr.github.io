@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>shopping</title>
+</head>
+<style>
+  .container {
+    text-align: center;
+  }
+  #shopping {
+    margin: 0 auto;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <h2>文具店购物车</h2>
+    <table id="shopping">
+      <thead>
+        <tr>
+          <th>选择</th>
+          <th>商品名称</th>
+          <th>商品单价(V)</th>
+          <th>商品数量</th>
+          <th>总价(V)</th>
+        </tr>
+      </thead>
+      <tbody id="table-main">
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>
+            全选
+            <input type="checkbox" name="choose" id="choose-total">
+          </td>
+          <td id="value-total" colspan="4"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <script type="text/javascript">
+    var info = [
+      {
+        "id": 1,
+        "name": "英雄牌 钢笔",
+        "count": 1,
+        "price": 69,
+        "checked": false
+      },
+      {
+        "id": 2,
+        "name": "晨光牌 铅字笔",
+        "count": 2,
+        "price": 5.5,
+        "checked": true
+      },
+    ];
+    window.onload = function () {
+      var tbody = document.getElementById("table-main");
+      var countTotal = 0;
+      var valueTotal = 0;      
+      //将信息插入列表中
+      for (var i = 0; i < info.length; i++) {
+        var trow = getDataRow(info[i]);
+        tbody.appendChild(trow);
+        countTotal += info[i].count;
+        valueTotal += Number(info[i].checked) * info[i].count * info[i].price;
+      }
+      valueTotalCell = document.getElementById("value-total");
+      valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "Y";
+      //加入点击事件
+      tbody.addEventListener("click",function (event) {
+        console.log(event.target);
+        console.log(event.target.index)
+      })
+    }
+    function getDataRow(h) {
+      var row = document.createElement("tr");
+      //加入checked属性(选择)
+      var checkedCell = document.createElement("td");
+      row.appendChild(checkedCell);
+      var checkedBtn = document.createElement("input");
+      checkedBtn.setAttribute("type","checkbox");
+      checkedBtn.setAttribute("name","choose");
+      if (h.checked) {
+        checkedBtn.setAttribute("checked","checked"); 
+      }
+      checkedCell.appendChild(checkedBtn);
+      //加入name属性（商品名称）
+      var nameCell = document.createElement("td");
+      nameCell.innerHTML = h.name;
+      row.appendChild(nameCell);
+      //加入price属性（商品单价）
+      var priceCell = document.createElement("td");
+      priceCell.innerHTML = h.price;
+      row.appendChild(priceCell);
+      //加入count属性（商品数量）
+      var countCell = document.createElement("td");
+      row.appendChild(countCell);
+      addBtn = document.createElement("input");
+      addBtn.setAttribute("type","button");
+      addBtn.setAttribute("value","+");
+      countCell.appendChild(addBtn);
+      countNum = document.createElement("span");
+      countNum.innerHTML = h.count;
+      countCell.appendChild(countNum);      
+      minusBtn = document.createElement("input");
+      minusBtn.setAttribute("type","button");
+      minusBtn.setAttribute("value","-");
+      countCell.appendChild(minusBtn);
+      //算出总价
+      var valueCell = document.createElement("td");
+      valueCell.innerHTML = h.price * h.count;
+      row.appendChild(valueCell);
+
+      return row
+    }
+  </script>
+</body>
+</html>
