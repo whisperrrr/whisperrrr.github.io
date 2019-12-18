@@ -58,6 +58,34 @@
         "price": 5.5,
         "checked": true
       },
+      {
+        "id": 3,
+        "name": "晨光牌 铅笔",
+        "count": 1,
+        "price": 2,
+        "checked": false
+      },
+      {
+        "id": 4,
+        "name": "狗熊牌 橡皮擦",
+        "count": 1,
+        "price": 1,
+        "checked": false
+      },
+      {
+        "id": 5,
+        "name": "瑞士牌 双肩书包",
+        "count": 1,
+        "price": 199,
+        "checked": true
+       },
+      {
+        "id": 6,
+        "name": "晨光牌 作业本",
+        "count": 5,
+        "price": 2.5,
+        "checked": false
+      }
     ];
     window.onload = function () {
       var tbody = document.getElementById("table-main");
@@ -67,17 +95,73 @@
       for (var i = 0; i < info.length; i++) {
         var trow = getDataRow(info[i]);
         tbody.appendChild(trow);
-        countTotal += info[i].count;
+        countTotal += Number(info[i].checked) * info[i].count;
         valueTotal += Number(info[i].checked) * info[i].count * info[i].price;
       }
       valueTotalCell = document.getElementById("value-total");
       valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "Y";
-      //加入点击事件
+      //tbody加入点击事件
       tbody.addEventListener("click",function (event) {
-        console.log(event.target);
-        console.log(event.target.index)
+        var selectedBtn = event.target;
+        var tdFather = selectedBtn.parentNode;
+        var trFather = tdFather.parentNode;
+        var trcheck = trFather.children[0].children[0].checked;
+        if (selectedBtn.value === "+") {
+          tdFather.children[1].innerHTML = Number(tdFather.children[1].innerHTML) + 1;
+          trFather.children[4].innerHTML = Number(trFather.children[4].innerHTML) + Number(trFather.children[2].innerHTML);
+          if (trcheck) {
+            countTotal += 1;
+            valueTotal += Number(trFather.children[2].innerHTML);
+          }
+        }
+        if (selectedBtn.value === "-") {
+          tdFather.children[1].innerHTML = Number(tdFather.children[1].innerHTML) - 1;
+          trFather.children[4].innerHTML = Number(trFather.children[4].innerHTML) - Number(trFather.children[2].innerHTML);
+          if (trcheck) {
+            countTotal -= 1;
+            valueTotal -= Number(trFather.children[2].innerHTML);
+          }
+          if (trFather.children[4].innerHTML == 0) {
+            trFather.remove();
+          }
+        }
+        if (selectedBtn.type === "checkbox") {
+          if (selectedBtn.checked) {
+            countTotal += Number(trFather.children[3].children[1].innerHTML);
+            valueTotal += Number(trFather.children[4].innerHTML);
+          }
+          else {
+            countTotal -= Number(trFather.children[3].children[1].innerHTML);
+            valueTotal -= Number(trFather.children[4].innerHTML);
+          }
+        }
+        valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "Y";
+      })
+      //tfoot加入点击事件
+      var chooseTotal = document.getElementById("choose-total");
+      var checkboxList = document.getElementsByName("choose");
+      var trList = document.getElementsByTagName("tr");
+      chooseTotal.addEventListener("click",function (event) {
+        countTotal = 0;
+        valueTotal = 0;
+        if (event.target.checked) {
+          for (var n = 0; n < checkboxList.length; n++) {
+            checkboxList[n].checked = true;        
+          }
+          for (var m = 1; m < trList.length - 1; m++) {
+            countTotal += Number(trList[m].children[3].children[1].innerHTML);
+            valueTotal += Number(trList[m].children[4].innerHTML);
+          }          
+        }
+        else {
+          for (var n = 0; n < checkboxList.length; n++) {
+            checkboxList[n].checked = false;
+          } 
+        }
+        valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "Y";   
       })
     }
+    //导入原始数据
     function getDataRow(h) {
       var row = document.createElement("tr");
       //加入checked属性(选择)
