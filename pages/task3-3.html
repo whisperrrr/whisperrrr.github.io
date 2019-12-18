@@ -4,17 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/task3-3.css">
   <title>shopping</title>
 </head>
-<style>
-  .container {
-    text-align: center;
-  }
-  #shopping {
-    margin: 0 auto;
-  }
-</style>
-
 <body>
   <div class="container">
     <h2>文具店购物车</h2>
@@ -23,19 +15,18 @@
         <tr>
           <th>选择</th>
           <th>商品名称</th>
-          <th>商品单价(V)</th>
+          <th>商品单价(&#165)</th>
           <th>商品数量</th>
-          <th>总价(V)</th>
+          <th>总价(&#165)</th>
         </tr>
       </thead>
       <tbody id="table-main">
-
       </tbody>
       <tfoot>
         <tr>
           <td>
             全选
-            <input type="checkbox" name="choose" id="choose-total">
+            <input type="checkbox" name="choose" id="choose-total" />
           </td>
           <td id="value-total" colspan="4"></td>
         </tr>
@@ -99,7 +90,7 @@
         valueTotal += Number(info[i].checked) * info[i].count * info[i].price;
       }
       valueTotalCell = document.getElementById("value-total");
-      valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "Y";
+      valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "&#165";
       //tbody加入点击事件
       tbody.addEventListener("click",function (event) {
         var selectedBtn = event.target;
@@ -135,7 +126,7 @@
             valueTotal -= Number(trFather.children[4].innerHTML);
           }
         }
-        valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "Y";
+        valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "&#165";
       })
       //tfoot加入点击事件
       var chooseTotal = document.getElementById("choose-total");
@@ -158,7 +149,7 @@
             checkboxList[n].checked = false;
           } 
         }
-        valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "Y";   
+        valueTotalCell.innerHTML =  "共计"+ countTotal + "件商品,"+ valueTotal + "&#165";   
       })
     }
     //导入原始数据

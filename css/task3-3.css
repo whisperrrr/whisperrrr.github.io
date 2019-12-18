@@ -1,0 +1,46 @@
+  table,table tr th, table tr td {
+    border:1px solid rgb(238,238,238); 
+    padding: 5px;
+  }
+  table {
+    text-align: center;
+    border-collapse: collapse;
+  }
+  table tr th {
+    background-color:rgb(222,222,222);
+  }
+  tfoot {
+    text-align: right;
+  }
+  input[type=checkbox]:after  {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: rgb(110, 167, 255);
+  } 
+  input[type=checkbox]:checked:after  {
+    display: block;
+    content: "\2714";
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    border-radius: 2px;
+  }
+  input[type=button] {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin: 0 5px;
+    border: 1px solid rgb(238,238,238);
+    border-radius: 2px;
+    background-color: rgb(222,222,222);
+  }
+  .container {
+    text-align: center;
+  }
+  #shopping {
+    margin: 0 auto;
+  }
