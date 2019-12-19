@@ -155,44 +155,26 @@
     //导入原始数据
     function getDataRow(h) {
       var row = document.createElement("tr");
-      //加入checked属性(选择)
-      var checkedCell = document.createElement("td");
-      row.appendChild(checkedCell);
-      var checkedBtn = document.createElement("input");
-      checkedBtn.setAttribute("type","checkbox");
-      checkedBtn.setAttribute("name","choose");
+      var ifchecked;
       if (h.checked) {
-        checkedBtn.setAttribute("checked","checked"); 
+        ifchecked = "checked";
       }
-      checkedCell.appendChild(checkedBtn);
-      //加入name属性（商品名称）
-      var nameCell = document.createElement("td");
-      nameCell.innerHTML = h.name;
-      row.appendChild(nameCell);
-      //加入price属性（商品单价）
-      var priceCell = document.createElement("td");
-      priceCell.innerHTML = h.price;
-      row.appendChild(priceCell);
-      //加入count属性（商品数量）
-      var countCell = document.createElement("td");
-      row.appendChild(countCell);
-      addBtn = document.createElement("input");
-      addBtn.setAttribute("type","button");
-      addBtn.setAttribute("value","+");
-      countCell.appendChild(addBtn);
-      countNum = document.createElement("span");
-      countNum.innerHTML = h.count;
-      countCell.appendChild(countNum);      
-      minusBtn = document.createElement("input");
-      minusBtn.setAttribute("type","button");
-      minusBtn.setAttribute("value","-");
-      countCell.appendChild(minusBtn);
-      //算出总价
-      var valueCell = document.createElement("td");
-      valueCell.innerHTML = h.price * h.count;
-      row.appendChild(valueCell);
-
-      return row
+      else {
+        ifchecked = "";
+      }
+      row.innerHTML = 
+        '<td>' +
+        '<input type="checkbox" name="choose" ' + ifchecked +'/>' +
+        '</td>' +
+        '<td>' + h.name +'</td>' +
+        '<td>' + h.price + '</td>' +
+        '<td>' +
+        '<input type="button" value="+" />' +
+        '<span>' + h.count + '</span>' +
+        '<input type="button" value="-" />' +
+        '</td>' +
+        '<td>' + h.price * h.count + '</td>' ;
+      return row;
     }
   </script>
 </body>
