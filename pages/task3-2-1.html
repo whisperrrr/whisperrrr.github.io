@@ -55,13 +55,15 @@
   </div>
   <script>
     function check() {
-      if (document.getElementById("account").value === "123"
-         && document.getElementById("passwd").value === "123") {
+      var accountValue = document.getElementById("account").value;
+      var passwdValue = document.getElementById("passwd").value;
+      if (accountValue === "123"
+         && passwdValue === "123") {
         alert("login success");
       }
       else {
-        document.getElementById("passwd").value = "";
         alert("your password is not matched to account");
+        document.getElementById("passwd").value = "";
       }
     }
   </script>
