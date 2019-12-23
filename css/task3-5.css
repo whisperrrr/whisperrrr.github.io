@@ -1,7 +1,7 @@
    #todo-card {
       width: 500px;
       margin: 0 auto;
-      border: 1px solid grey;
+      border: 1px solid rgb(128, 128, 128);
       border-radius: 5px;
       padding: 10px 20px;
     }
@@ -10,16 +10,16 @@
       height: 20px;
     }
     .pink-button {
-      background-color: pink;
-      color: white;
+      background-color: rgb(255, 192, 203);
+      color: rgb(255, 255, 255);
       border: 0px;
       border-radius: 5px;
       padding: 5px 10px;
       font-size: 1em;
     }
     .pink-text-button {
-      background-color: white;
-      color: pink;
+      background-color: rgb(255, 255, 255);
+      color: rgb(255, 192, 203);
       border: 0px;
       font-size: 1em;
       margin: 40px 10px 0px 10px;

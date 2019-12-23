@@ -76,6 +76,7 @@ window.onload = function() {
   })
   //展示数据库里的todolist列表
   function showTodoList(data,list) {
+    var grayBackground = false;
     list.innerHTML = "";
     if (data) {
       for (var keys in data) {
@@ -89,12 +90,15 @@ window.onload = function() {
           '</span>';
         if (listStatus) {
           newList.style.textDecoration = "line-through";
-          newList.style.color = "gray";
+          newList.style.color = "rgb(128, 128, 128)";
           newList.firstElementChild.setAttribute("checked","checked");
-        }
-        else {
+        }else {
           delete newList.firstElementChild.checked;
         }
+        if (grayBackground) {
+          newList.style.backgroundColor = "rgb(244, 236, 236)";  
+        }
+        grayBackground = !grayBackground;
         list.appendChild(newList);
       }
     }
