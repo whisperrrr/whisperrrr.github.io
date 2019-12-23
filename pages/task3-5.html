@@ -43,8 +43,10 @@
     <section id="header">
       <h2>To Do List</h2>
       <p><em>Simple Todo List with addingand filter by diff status.</em></p>
-      <input type="text" class="text-input" />
-      <input type="button" class="pink-button" value="Add" />
+      <form>
+        <input type="text" class="text-input" />
+        <input type="button" class="pink-button" value="Add" />
+      </form>
     </section>
     <section id="list-content">
       <ol id="todo-list">
@@ -60,6 +62,7 @@
         //读取数据库并初始化
         var todoList = document.getElementById("todo-list");
         var active = getData("activeData");
+        var flag = "all";
         if (!active) {
           active = {};
         }
@@ -77,17 +80,24 @@
         var addButton = document.getElementsByClassName("pink-button")[0];
         addButton.onclick = function () {
           var textInputValue = textInput.value;
-          if(textInputValue == "") {
-            alert("请输入内容哦")
-          }
-          else {
-            all[textInputValue] = 0;
-            active[textInputValue] = 0;
-            saveData("allData",all);
-            saveData("activeData",active);
-            showTodoList(all,todoList);
-            textInput.value = "";
-          }
+            if (textInputValue) {
+              if (flag === "all") {
+                all[textInputValue] = 0;
+                active[textInputValue] = 0;
+                showTodoList(all,todoList);
+                saveData("allData",all);
+                saveData("activeData",active);
+              }else if (flag === "active"){
+                all[textInputValue] = 0;
+                active[textInputValue] = 0;
+                showTodoList(active,todoList);
+                saveData("allData",all);
+                saveData("activeData",active);
+              }else {
+                showTodoList(complete,todoList);
+              }
+              textInput.value = "";
+            }  
         }
         //改变todolist的状态并保存
         var listContent =document.getElementById("list-content");
@@ -115,12 +125,13 @@
           taskType = taskType.toLowerCase();
           if (taskType === "active") {
             showTodoList(active,todoList);
-          }
-          else if (taskType === "complete") {
+            flag = "active";
+          }else if (taskType === "complete") {
             showTodoList(complete,todoList);
-          } 
-          else {
+            flag = "complete";
+          }else {
             showTodoList(all,todoList);
+            flag = "all";
           }         
         })
         //展示数据库里的todolist列表
