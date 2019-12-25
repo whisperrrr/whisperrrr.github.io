@@ -23,27 +23,33 @@ window.onload = function() {
 function addTodoList() {
 var textInput = document.getElementsByClassName("text-input")[0];
 var addButton = document.getElementsByClassName("pink-button")[0];
-addButton.onclick = function () {
-  var textInputValue = textInput.value;
-    if (textInputValue) {
-      if (flag === "all") {
-        all[textInputValue] = 0;
-        active[textInputValue] = 0;
-        showTodoList(all,todoList);
-        saveData("allData",all);
-        saveData("activeData",active);
-      }else if (flag === "active"){
-        all[textInputValue] = 0;
-        active[textInputValue] = 0;
-        showTodoList(active,todoList);
-        saveData("allData",all);
-        saveData("activeData",active);
-      }else {
-        showTodoList(complete,todoList);
-      }
-      textInput.value = "";
-    }  
+addButton.onclick = addTodo;
+document.onkeydown = function (event) {
+  if (event && event.keyCode == 13) {
+    addTodo();
   }
+}
+function addTodo() {
+  var textInputValue = textInput.value;
+  if (textInputValue) {
+    if (flag === "all") {
+      all[textInputValue] = 0;
+      active[textInputValue] = 0;
+      showTodoList(all,todoList);
+      saveData("allData",all);
+      saveData("activeData",active);
+    }else if (flag === "active"){
+      all[textInputValue] = 0;
+      active[textInputValue] = 0;
+      showTodoList(active,todoList);
+      saveData("allData",all);
+      saveData("activeData",active);
+    }else {
+      showTodoList(complete,todoList);
+    }
+    textInput.value = "";
+  }  
+}
 }
 //改变todolist的状态并保存
 function changeTodoListStatus() {
