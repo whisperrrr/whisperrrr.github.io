@@ -2,17 +2,11 @@ var todoList = document.getElementById("todo-list");
 var flag = "all";
 //读取数据库并初始化
 var active = getData("activeData");
-if (!active) {
-  active = {};
-}
 var complete = getData("completeData");
-if (!complete) {
-  complete = {};
-}
 var all = getData("allData");
-if (!all) {
-  all = {};
-}      
+active = active || {};
+complete = complete || {};
+all = all || {};  
 window.onload = function() {
   showTodoList(all,todoList);
   addTodoList();
