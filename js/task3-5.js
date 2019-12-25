@@ -63,16 +63,19 @@ window.onload = function() {
   footer.addEventListener("click",function (event) {
     var taskType = event.target.value;
     taskType = taskType.toLowerCase();
-    if (taskType === "active") {
-      showTodoList(active,todoList);
-      flag = "active";
-    }else if (taskType === "complete") {
-      showTodoList(complete,todoList);
-      flag = "complete";
-    }else {
-      showTodoList(all,todoList);
-      flag = "all";
-    }         
+    switch (taskType) {
+      case "active":
+        showTodoList(active,todoList);
+        flag = "active";
+        break;
+      case "complete":
+        showTodoList(complete,todoList);
+        flag = "complete"; 
+        break;     
+      default:
+        showTodoList(all,todoList);
+        flag = "all";               
+    }
   })
   //展示数据库里的todolist列表
   function showTodoList(data,list) {
