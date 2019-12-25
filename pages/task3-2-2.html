@@ -12,14 +12,15 @@
       background: rgb(240,240,240);
       position: relative;
     }
-    #box-fix {
+    #box-move {
       width: 80px;
       height: 80px;
       position: absolute;
       left: 600px;
       top: 480px;
+      background-color: yellow;
     }
-    #box-unfix {
+    #box-unmove {
       width: 80px;
       height: 80px;
       background:green;
@@ -31,61 +32,54 @@
 </head>
 <body>
   <div id="container">
-    <div id="box-unfix">
+    <div id="box-unmove">
     </div>
-    <div id="box-fix"> 
+    <div id="box-move"> 
     </div>
-    <script>
-      var moveDiv = document.querySelector("#box-unfix");
-      moveDiv.addEventListener("mousedown",mouseMoveHandler);
-      var container = document.getElementById("container");
-      var maxWidth = container.clientWidth;
-      var maxHeight = container.clientHeight;
-      document.getElementById("box-fix").style.background = "yellow";
-      //给他设定onmousedown事件
-      function mouseMoveHandler(event) {
-        if (event.type === "mousedown") {
-          event.preventDefault();
-          document.point={
-                    x:event.offsetX,
-                    y:event.offsetY
-                };
-          document.moveDiv=this;
-          document.addEventListener("mousemove",mouseMoveHandler);
-          document.addEventListener("mouseup",mouseMoveHandler);
-        }
-        else if (event.type === "mousemove") {
-          this.moveDiv.style.top = event.clientY - this.point.y + "px";
-          this.moveDiv.style.left = event.clientX - this.point.x + "px";
-          var boxUnfixTop = event.clientY - this.point.y;
-          var boxUnfixLeft = event.clientX - this.point.x;
-          if (this.moveDiv.offsetLeft < 0) {
-            this.moveDiv.style.left = 0 + "px";
-          } 
-          if (this.moveDiv.offsetTop < 0) {
-            this.moveDiv.style.top = 0 + "px";
-          } 
-          if (this.moveDiv.offsetLeft + this.moveDiv.clientWidth > maxWidth) {
-            var moveDivLeft = maxWidth - this.moveDiv.clientWidth;
-            this.moveDiv.style.left = maxWidth - this.moveDiv.clientWidth + "px";
-          }
-          if (this.moveDiv.offsetTop + this.moveDiv.clientHeight> maxHeight) {
-            var moveDivTop = maxHeight - this.moveDiv.clientHeight;
-            this.moveDiv.style.top = maxHeight - this.moveDiv.clientHeight+ "px";
-          }
-          if (boxUnfixTop > 400
-             &&boxUnfixLeft > 520
-             &&boxUnfixTop < 560
-             &&boxUnfixLeft < 680) {
-              document.getElementById("box-fix").style.background = "blue";
-             }
-        }
-         else if(event.type === "mouseup") {
-          this.removeEventListener("mousemove",mouseMoveHandler);
-          this.removeEventListener("mouseup",mouseMoveHandler); 
-         }
-      }
-    </script>
+  <script>
+    var moveDiv = document.getElementById("box-unmove");
+    var unmoveDiv = document.getElementById("box-move");
+    var container = document.getElementById("container");
+    var isdraggable = false;
+    moveDiv.onmousedown = function (event) {
+      var xInit = event.clientX - moveDiv.offsetLeft;
+      var yInit = event.clientY - moveDiv.offsetTop;
+      isdraggable = true;  
+        
+      mouseMove(xInit,yInit);
+      mouseUp();
+    }
+    function mouseMove(xInit,yInit) {
+      document.onmousemove = function (event) {
+        if (isdraggable) {
+          var xMove = event.clientX - xInit;
+          var yMove = event.clientY - yInit;
 
+          var xMax = container.clientWidth - 80;
+          var yMax = container.clientHeight - 80;
+
+          xMove = Math.min(xMax,Math.max(0,xMove));
+          yMove = Math.min(yMax,Math.max(0,yMove));
+        }
+        xUnmove = unmoveDiv.offsetLeft;
+        yUnmove = unmoveDiv.offsetTop;
+        if (xMove <= xUnmove + 80
+          && xMove > xUnmove - 80
+          && yMove <= yUnmove + 80
+          && yMove > yUnmove - 80) {
+          unmoveDiv.style.backgroundColor = "blue";
+          } else {
+            unmoveDiv.style.backgroundColor = "yellow"; 
+          }
+        moveDiv.style.left = xMove + "px";
+        moveDiv.style.top = yMove + "px";
+      }
+    }
+    function mouseUp() {
+      document.onmouseup = function() {
+        isdraggable = false;
+      }
+    }
+  </script>
 </body>
 </html>
